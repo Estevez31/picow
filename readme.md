@@ -31,5 +31,5 @@ oled.text("Hola Mundo", 0, 0)
 oled.show() 
 ```
 ## Simulación del circuito
-
+![](ssd1306.PNG)
 ## Cuicuito
