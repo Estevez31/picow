@@ -33,3 +33,4 @@ oled.show()
 ## Simulación del circuito
 ![](ssd1306.PNG)
 ## Cuicuito
+![](oled.jpeg)
