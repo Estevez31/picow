@@ -32,5 +32,22 @@ oled.show()
 ```
 ## Simulación del circuito
 ![](ssd1306.PNG)
-## Cuicuito
+## Curcuito
 ![](oled.jpeg)
+
+# Blink pico w
+## Código
+```python
+from machine import Pin
+from utime import sleep
+
+led = machine.Pin("LED", machine.Pin.OUT)
+
+while True:
+    led.toggle()
+    sleep(0.5)
+```
+## Simulación del circuito
+![]()
+## Curcuito
+![]()
