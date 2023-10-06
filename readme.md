@@ -1,4 +1,4 @@
-![]([FOTO.PNG](https://www.tijuana.tecnm.mx/wp-content/uploads/2022/11/Banderin-TECNM-ITT-2022-ver-Final-scaled-e1668192523487-1568x948.jpg))
+![](FOTO.png)
 # **Tecnológico Nacional de México**
 # **Instituto Tecnológico de Tijuana**
 # **Subdirección Académica**
@@ -48,6 +48,10 @@ while True:
     sleep(0.5)
 ```
 ## Simulación del circuito
-![]()
+![](led.png)
 ## Curcuito
-![]()
+![](picow1.jpeg)
+> LED encendido
+
+![](picow2.jpeg)
+> LED apagado
