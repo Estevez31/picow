@@ -49,6 +49,7 @@ while True:
 ```
 ## Simulación del circuito
 ![](led.png)
+
 ## Curcuito
 ![](picow1.jpeg)
 > LED encendido
