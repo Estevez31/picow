@@ -158,14 +158,10 @@ oled.blit(logo,0,0)
 oled.show()
 ```
 ## Simulación del circuito
-![]()
+![](logo.PNG)
 
 ## Curcuito
 ![]()
-> LED 
-
-![]()
-> LED
 
 # Hora de Internet (NTP Time server)
 ## Código
