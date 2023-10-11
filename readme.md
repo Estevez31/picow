@@ -1,4 +1,4 @@
-![](FOTO.png)
+![](FOTO.PNG)
 # **Tecnológico Nacional de México**
 # **Instituto Tecnológico de Tijuana**
 # **Subdirección Académica**
