@@ -161,7 +161,7 @@ oled.show()
 ![](logo.PNG)
 
 ## Curcuito
-![]()
+![](LOGOS.jpg)
 
 # Hora de Internet (NTP Time server)
 ## Código
