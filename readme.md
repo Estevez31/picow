@@ -48,7 +48,7 @@ while True:
     sleep(0.5)
 ```
 ## Simulación del circuito
-![](led.png)
+![](led.PNG)
 
 ## Curcuito
 ![](picow1.jpeg)
