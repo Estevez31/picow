@@ -79,7 +79,7 @@ def init_i2c(scl_pin, sda_pin):
         print("I2C Configuration: {}".format(i2c_dev))
     return i2c_dev
 
-i2c = init_i2c(27,26)
+i2c = machine.I2C(0, sda=machine.Pin(8), scl=machine.Pin(9), freq=400000)
 oled = SSD1306_I2C(128,64,i2c)
 
 plan_b = [
@@ -166,15 +166,63 @@ oled.show()
 # Hora de Internet (NTP Time server)
 ## Código
 ```python
-from machine import Pin
+import time
+import machine
+import ssd1306
+import utime
+import network
+from machine import Pin, I2C #configuración de pines para su comunicación
+from ssd1306 import SSD1306_I2C #comunicación con la pantalla OLED
+import framebuf, sys
 
+#bloque de código para la conexion del raspberry a internet
+print("¡Conectando a Wi-Fi! ", end="")
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect("OPPO A53","f082dd9d35a2")
+while not wlan.isconnected():
+  print(".", end="")
+  time.sleep(0.1)
+print("¡Conexión con éxito!")
+print(wlan.ifconfig())
+
+#Verificación de dispositivo
+def init_i2c(scl_pin, sda_pin):
+    i2c_dev = I2C(1, scl=Pin(scl_pin), sda=Pin(sda_pin), freq=200000)
+    i2c_addr = [hex(ii) for ii in i2c_dev.scan()]
+    
+    if not i2c_addr:
+        print('Pantalla I2C no encontrada')
+        sys.exit()
+    else:
+        print("I2C Address : {}".format(i2c_addr[0]))
+        print("I2C Configuration: {}".format(i2c_dev))
+        
+    return i2c_dev
+
+i2c = machine.I2C(0, sda=machine.Pin(8), scl=machine.Pin(9), freq=400000)
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+
+import ntptime
+ntptime.settime()
+
+while True:
+    hr = utime.localtime() #hora local
+    #despliegue de hora de internet
+    print("{:02}:{:02}:{:02}".format(hr[3], hr[4], hr[5]))
+    utime.sleep(1)
+    oled.fill(0)
+    oled.text("Hora:", 0, 0)
+    oled.text("{:02d}:{:02d}:{:02d}".format(hr[3], hr[4], hr[5]), 0, 16)
+    oled.show()
+    time.sleep(1)
 ```
 ## Simulación del circuito
-![]()
+![](HORA2.PNG)
 
 ## Curcuito
 ![](HORA.jpg)
-> L
+> Fisico
 
-![]()
-> L
+![](HORA1.PNG)
+> Consola
